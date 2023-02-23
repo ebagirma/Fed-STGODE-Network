@@ -130,15 +130,15 @@ if __name__ == '__main__':
 
 
 
-    plt.figure()
-    plt.plot(range(len(loss_train)), loss_train)
-    plt.ylabel('train_loss')
-    plt.savefig('./save/fed_loss{}_{}_{}_C{}_iid{}.png'.format(args.dataset, args.model, args.epochs, args.frac, args.iid))
+    # plt.figure()
+    # plt.plot(range(len(loss_train)), loss_train)
+    # plt.ylabel('train_loss')
+    # plt.savefig('./save/fed_loss{}_{}_{}_C{}_iid{}.png'.format(args.dataset, args.model, args.epochs, args.frac, args.iid))
 
-    plt.figure()
-    plt.plot(range(len(loss_train)), acc_train)
-    plt.ylabel('train_accuracy')
-    plt.savefig('./save/fed_accuracy{}_{}_{}_C{}_iid{}.png'.format(args.dataset, args.model, args.epochs, args.frac, args.iid))
-    plt.show()        
+    # plt.figure()
+    # plt.plot(range(len(loss_train)), acc_train)
+    # plt.ylabel('train_accuracy')
+    # plt.savefig('./save/fed_accuracy{}_{}_{}_C{}_iid{}.png'.format(args.dataset, args.model, args.epochs, args.frac, args.iid))
+    # plt.show()        
     
 
