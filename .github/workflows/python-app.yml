@@ -26,6 +26,8 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Update README
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         echo "Dependencies installed" >> README.md
         git config --global user.email "ebagirma8@gmail.com"
@@ -33,3 +35,4 @@ jobs:
         git remote set-url origin https://$GH_TOKEN@github.com/ebagirma/Fed-STGODE-Network.git
         git commit -am "Update README with dependency installation message"
         git push
+
