@@ -1,3 +1,8 @@
+[![Python application](https://github.com/ebagirma/Fed-STGODE-Network/actions/workflows/python-app.yml/badge.svg)](https://github.com/ebagirma/Fed-STGODE-Network/actions/workflows/python-app.yml)
+
+
+
+
 ## Parameters
 
 Here are the parameters that can be passed to the script:
