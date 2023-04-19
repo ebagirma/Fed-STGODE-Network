@@ -28,7 +28,6 @@ jobs:
     - name: Update README
       run: |
         echo "Dependencies installed" >> README.md
-        git config --global user.email "ebagirma8@gmail.com"
-        git config --global user.name "ebagirma"
+        git remote set-url origin https://$GH_TOKEN@github.com/ebagirma/Fed-STGODE-Network.git
         git commit -am "Update README with dependency installation message"
         git push
