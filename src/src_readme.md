@@ -14,7 +14,7 @@ This subdirectory contains the implementation of the federated learning models w
 
 This subdirectory contains the implementation of the federated learning models using the Flower framework:
 
-- `stg_ode_flower.py`: Contains the implementation of the Federated STG ODE model with Flower.
+- `stg_ode_flower/`: Contains the implementation of the Federated STG ODE model with Flower.
 
 ## utils
 
