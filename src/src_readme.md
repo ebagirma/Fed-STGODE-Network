@@ -20,4 +20,4 @@ This subdirectory contains the implementation of the federated learning models u
 
 This subdirectory contains utility functions and helper code:
 
-- `helpers.py`: Contains various helper functions used throughout the project.
+
