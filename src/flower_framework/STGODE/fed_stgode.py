@@ -231,7 +231,7 @@ def client_fn(cid: str) -> FlowerClient:
     w_glob = net.state_dict()
     
     net.load_state_dict(w_glob, strict=True)
-    net(torch.rand(16, 170, 12, 3))
+    net(torch.rand(args.batch_size, feature_size, 12, 3).to(DEVICE))
     # will train and evaluate on their own unique data
     trainloader = trainloaders[int(cid)]
     valloader = valloaders[int(cid)]
@@ -265,6 +265,7 @@ A_se_wave = get_normalized_adj(dtw_matrix).to(DEVICE)
 batch_size = args.batch_size
 train_loader = Subset(train_loader, np.arange(1000))
 valid_loader = Subset(valid_loader, np.arange(200))
+feature_size = train_loader.dataset.data.shape[1]
 inds = np.array_split(np.random.randint(len(train_loader), size=len(train_loader)), NUM_CLIENTS)
 trainloaders = []
 valloaders = []
@@ -280,7 +281,7 @@ print("total train loaders:", len(trainloaders))
 print("total  val loaders:", len(valloaders))
 print("len of single train loader:", len(trainloaders[0]))
 print("len of single val loader:", len(valloaders[0]))
-
+print('feature size', feature_size)
 
 
 
