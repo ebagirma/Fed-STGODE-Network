@@ -1,6 +1,6 @@
 # STGODE
-This is an implementation of [Spatial-Temporal Graph ODE Networks for Traffic Flow Forecasting](https://arxiv.org/abs/2106.12931) 
 
+This is an implementation of [Spatial-Temporal Graph ODE Networks for Traffic Flow Forecasting](https://arxiv.org/abs/2106.12931)
 
 install the nightly version of flower by:
 
@@ -22,17 +22,29 @@ play with this pickle file to see all the result for each metrics for each clien
 
 to plot the data of this file use plots_flwr_history.ipynb
 
+* this code spawns different processes in parallel because of framework, ray
+* use this code to kill all the processes
+
+  * ```
+     kill $(ps aux | grep python | grep -v grep | awk '{print $2}') 
+    ```
+
+
 ## Requirements
+
 * python 3.7
 * torch 1.7.0+cu101
 * torchdiffeq 0.2.2
 * fastdtw 0.3.4
 
 ## Dataset
+
 The datasets used in our paper are collected by the Caltrans Performance Measurement System(PeMS). Please refer to [STSGCN (AAAI2020)](https://github.com/Davidham3/STSGCN) for the download url.
 
 ## Reference
+
 Please cite our paper if you use the model in your own work:
+
 ```
 @inproceedings{fang2021spatial,
   title={Spatial-Temporal Graph ODE Networks for Traffic Flow Forecasting},
@@ -42,6 +54,3 @@ Please cite our paper if you use the model in your own work:
   year={2021}
 }
 ```
-
-
-
