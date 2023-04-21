@@ -283,22 +283,7 @@ print("len of single val loader:", len(valloaders[0]))
 
 
 
-#trainloaders, valloaders, testloader = load_datasets(NUM_CLIENTS, args.batch_size, train_x, train_y, test_x, test_y)
 
-'''net = ODEGCN(num_nodes=data.shape[1], 
-            num_features=data.shape[2], 
-            num_timesteps_input=args.his_length, 
-            num_timesteps_output=args.pred_length, 
-            A_sp_hat=A_sp_wave, 
-            A_se_hat=A_se_wave)
-
-net.std = std
-net.mean = mean
-
-w_glob = net.state_dict()
-net_glob = net
-
-net = net.to(DEVICE)'''
 lr = args.lr
 #optimizer = torch.optim.AdamW(net.parameters(), lr=lr)
 criterion = nn.SmoothL1Loss()
