@@ -160,69 +160,6 @@ def generate_dataset(data, args):
 
 
 
-
-if args.log:
-    logger.add('log_{time}.log')
-options = vars(args)
-if args.log:
-    logger.info(options)
-else:
-    print(options)
-
-
-epoch = args.epochs
-NUM_CLIENTS = 5
-
-data, mean, std, dtw_matrix, sp_matrix = read_data(args)
-train_loader, valid_loader, test_loader = generate_dataset(data, args)
-A_sp_wave = get_normalized_adj(sp_matrix).to(DEVICE)
-A_se_wave = get_normalized_adj(dtw_matrix).to(DEVICE)
-
-batch_size = args.batch_size
-train_loader = Subset(train_loader, np.arange(1000))
-valid_loader = Subset(valid_loader, np.arange(200))
-inds = np.array_split(np.random.randint(len(train_loader), size=len(train_loader)), NUM_CLIENTS)
-trainloaders = []
-valloaders = []
-for idx in inds:
-    trainloaders.append(DataLoader(Subset(train_loader, idx), batch_size=batch_size, shuffle=True))
-
-
-inds = np.array_split(np.random.randint(len(valid_loader), size=len(valid_loader)), NUM_CLIENTS)
-for idx in inds:
-    valloaders.append(DataLoader(Subset(valid_loader, idx), batch_size=batch_size, shuffle=True))
-
-print("total train loaders:", len(trainloaders))
-print("total  val loaders:", len(valloaders))
-print("len of single train loader:", len(trainloaders[0]))
-print("len of single val loader:", len(valloaders[0]))
-
-
-
-#trainloaders, valloaders, testloader = load_datasets(NUM_CLIENTS, args.batch_size, train_x, train_y, test_x, test_y)
-
-'''net = ODEGCN(num_nodes=data.shape[1], 
-            num_features=data.shape[2], 
-            num_timesteps_input=args.his_length, 
-            num_timesteps_output=args.pred_length, 
-            A_sp_hat=A_sp_wave, 
-            A_se_hat=A_se_wave)
-
-net.std = std
-net.mean = mean
-
-w_glob = net.state_dict()
-net_glob = net
-
-net = net.to(DEVICE)'''
-lr = args.lr
-#optimizer = torch.optim.AdamW(net.parameters(), lr=lr)
-criterion = nn.SmoothL1Loss()
-
-#best_valid_rmse = 1000 
-#scheduler = StepLR(optimizer, step_size=50, gamma=0.5)
-
-
 class FlowerClient(fl.client.NumPyClient):
     def __init__(self, cid, net, trainloader, valloader, optimiser, schedular, learning_rate, epochs, loss_function, mean, std ):
         self.cid = cid
@@ -307,6 +244,70 @@ def client_fn(cid: str) -> FlowerClient:
 #params = get_parameters(ShallowRegressionLSTM(input_size=train_x.shape[1], hidden_units=num_hidden_units))
 
 # Create FedAvg strategy
+
+if args.log:
+    logger.add('log_{time}.log')
+options = vars(args)
+if args.log:
+    logger.info(options)
+else:
+    print(options)
+
+
+epoch = args.epochs
+NUM_CLIENTS = 5
+
+data, mean, std, dtw_matrix, sp_matrix = read_data(args)
+train_loader, valid_loader, test_loader = generate_dataset(data, args)
+A_sp_wave = get_normalized_adj(sp_matrix).to(DEVICE)
+A_se_wave = get_normalized_adj(dtw_matrix).to(DEVICE)
+
+batch_size = args.batch_size
+train_loader = Subset(train_loader, np.arange(1000))
+valid_loader = Subset(valid_loader, np.arange(200))
+inds = np.array_split(np.random.randint(len(train_loader), size=len(train_loader)), NUM_CLIENTS)
+trainloaders = []
+valloaders = []
+for idx in inds:
+    trainloaders.append(DataLoader(Subset(train_loader, idx), batch_size=batch_size, shuffle=True))
+
+
+inds = np.array_split(np.random.randint(len(valid_loader), size=len(valid_loader)), NUM_CLIENTS)
+for idx in inds:
+    valloaders.append(DataLoader(Subset(valid_loader, idx), batch_size=batch_size, shuffle=True))
+
+print("total train loaders:", len(trainloaders))
+print("total  val loaders:", len(valloaders))
+print("len of single train loader:", len(trainloaders[0]))
+print("len of single val loader:", len(valloaders[0]))
+
+
+
+#trainloaders, valloaders, testloader = load_datasets(NUM_CLIENTS, args.batch_size, train_x, train_y, test_x, test_y)
+
+'''net = ODEGCN(num_nodes=data.shape[1], 
+            num_features=data.shape[2], 
+            num_timesteps_input=args.his_length, 
+            num_timesteps_output=args.pred_length, 
+            A_sp_hat=A_sp_wave, 
+            A_se_hat=A_se_wave)
+
+net.std = std
+net.mean = mean
+
+w_glob = net.state_dict()
+net_glob = net
+
+net = net.to(DEVICE)'''
+lr = args.lr
+#optimizer = torch.optim.AdamW(net.parameters(), lr=lr)
+criterion = nn.SmoothL1Loss()
+
+#best_valid_rmse = 1000 
+#scheduler = StepLR(optimizer, step_size=50, gamma=0.5)
+
+
+
 strategy = fl.server.strategy.FedAvg(
     fraction_fit=1.0,  # Sample 100% of available clients for training
     fraction_evaluate=0.5,  # Sample 50% of available clients for evaluation

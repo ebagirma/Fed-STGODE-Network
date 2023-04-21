@@ -3,7 +3,7 @@
 
 echo "Starting server"
 
-source ../../project_env/bin/activate                    
+source ../../../project_env/bin/activate                    
 
 python3 fed_stgode.py       
 
