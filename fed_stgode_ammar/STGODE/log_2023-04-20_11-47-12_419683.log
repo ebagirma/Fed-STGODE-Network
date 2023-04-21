@@ -1,0 +1,1 @@
+2023-04-20 11:47:12.424 | INFO     | __main__:<module>:191 - {'remote': False, 'num_gpu': 0, 'epochs': 20, 'batch_size': 16, 'batch': 16, 'frac': 0.1, 'num_users': 100, 'filename': 'pems08', 'train_ratio': 0.6, 'valid_ratio': 0.2, 'his_length': 12, 'pred_length': 12, 'sigma1': 0.1, 'sigma2': 10, 'thres1': 0.6, 'thres2': 0.5, 'lr': 0.002, 'log': True}
