@@ -61,4 +61,4 @@ We welcome contributions to improve the project. Please feel free to submit issu
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
+This project is licensed under the MIT License. See [LICENSE](https://github.com/ebagirma/Federated-Learning/blob/main/LICENSE.txt) for more information.
