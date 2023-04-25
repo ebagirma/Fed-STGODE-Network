@@ -52,7 +52,7 @@ We present the validation results of our models on the PEMS04 dataset. The graph
 
 ![Validation results on PEMS04 dataset](https://user-images.githubusercontent.com/48454309/234192878-c74ecb99-2ed4-4503-8864-fef103a34ddd.png)
 
-These results showcase the effectiveness of using federated learning with stg ode models in predicting traffic flow patterns with lower loss. 
+These results showcase the effectiveness of using federated learning with stg ode models in predicting traffic flow patterns with lower loss. We have also implemented without the framework which you can find it here [![Flower implination of Stg-Ode In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1En9YarnWPlZ7iwlPF8RuSFGtQxGv9H8W?usp=sharing)
 
 
 ## Contributing
