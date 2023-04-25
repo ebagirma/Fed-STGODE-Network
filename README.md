@@ -1,4 +1,4 @@
-[![Python application](https://github.com/ebagirma/Federated-Learning/actions/workflows/python-app.yml/badge.svg)](https://github.com/ebagirma/Federated-Learning/actions/workflows/python-app.yml)  [![Flower implination of Stg-Ode In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12ID1n0OsS7d05mVOo8a8kuiZNi7cix2X?usp=sharing)
+[![Python application](https://github.com/ebagirma/Federated-Learning/actions/workflows/python-app.yml/badge.svg)](https://github.com/ebagirma/Federated-Learning/actions/workflows/python-app.yml)  [![Flower implination of Stg-Ode In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12ID1n0OsS7d05mVOo8a8kuiZNi7cix2X?usp=sharing) [![Jupyter Notebook Demo](https://img.shields.io/badge/Demo-Jupyter%20Notebook-informational)](./notebooks/Ploting_for_models.ipynb)
 
 # Federated Learning Project: Traffic Flow Prediction with PEMS Dataset
 
