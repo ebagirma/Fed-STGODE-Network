@@ -32,7 +32,8 @@ else:
     print("Using CPU")
     DEVICE = torch.device("cpu")
 
-
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 class Args:
     def __init__(self):
