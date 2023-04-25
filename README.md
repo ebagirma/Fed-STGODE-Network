@@ -45,7 +45,12 @@ We've implemented the following deep learning models for traffic flow prediction
 
 ## Results
 
-After training and evaluating the models, the results will be saved in the `results` directory. You can find the prediction accuracy, loss, and training time for each model.
+We present the validation results of our models on the PEMS04 dataset. The graph below demonstrates the performance of each model in terms of prediction accuracy.
+
+![Validation results on PEMS04 dataset](https://user-images.githubusercontent.com/48454309/234192878-c74ecb99-2ed4-4503-8864-fef103a34ddd.png)
+
+These results showcase the effectiveness of using federated learning with stg ode models in predicting traffic flow patterns with lower loss. 
+
 
 ## Contributing
 
