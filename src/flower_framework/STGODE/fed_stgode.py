@@ -3,6 +3,7 @@ from typing import List, Tuple
 
 from flwr.common import Metrics
 
+import logging
 import numpy as np
 import torch
 import torch.nn as nn
@@ -31,7 +32,8 @@ else:
     print("Using CPU")
     DEVICE = torch.device("cpu")
 
-
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 class Args:
     def __init__(self):
