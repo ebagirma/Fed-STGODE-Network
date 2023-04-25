@@ -38,10 +38,13 @@ you can download the dataset: git clone https://github.com/ebagirma/Pems_Dataset
 
 We've implemented the following deep learning models for traffic flow prediction:
 
-- GRU (Gated Recurrent Unit)
-- RNN (Recurrent Neural Network)
-- LSTM (Long Short-Term Memory)
-- STGODE (Spatio-Temporal Graph ODE Networks)
+- GRU (Gated Recurrent Unit) See the colab file for more details [![Flower implination of Stg-Ode In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12ID1n0OsS7d05mVOo8a8kuiZNi7cix2X?usp=sharing)
+
+- RNN (Recurrent Neural Network) See the colab file for more details [![Flower implination of Stg-Ode In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12ID1n0OsS7d05mVOo8a8kuiZNi7cix2X?usp=sharing)
+
+- LSTM (Long Short-Term Memory) See the colab file for more details [![Flower implination of Stg-Ode In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12ID1n0OsS7d05mVOo8a8kuiZNi7cix2X?usp=sharing)
+
+- STGODE (Spatio-Temporal Graph ODE Networks)  See the colab file for more details [![Flower implination of Stg-Ode In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12ID1n0OsS7d05mVOo8a8kuiZNi7cix2X?usp=sharing)
 
 ## Results
 
