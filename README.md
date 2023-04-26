@@ -60,3 +60,12 @@ We welcome contributions to improve the project. Please feel free to submit issu
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](https://github.com/ebagirma/Federated-Learning/blob/main/LICENSE.txt) for more information.
+
+## Credits
+
+This project is built upon the works of various researchers and developers. We would like to express our gratitude for the following repositories:
+
+- [STGODE](https://github.com/square-coder/STGODE)
+- [Federated-Learning-PyTorch](https://github.com/vaseline555/Federated-Learning-PyTorch)
+- [Flower](https://flower.dev/)
+- [FedGRU](https://github.com/Practicing-Federated-Learning-for-IoT/FedGRU)
