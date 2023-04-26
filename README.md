@@ -32,8 +32,11 @@ git clone https://github.com/ebagirma/Federated-Learning.git && cd Federated-Lea
 
 We use the PEMS (PeMS Traffic Monitoring) dataset, which contains real-time traffic data collected from loop detectors on California highways. The dataset includes traffic speed, occupancy, and flow measurements.
 
-you can download the dataset: git clone https://github.com/ebagirma/Pems_Dataset.git
+you can download the dataset:
 
+<pre>
+git clone https://github.com/ebagirma/Pems_Dataset.git
+</pre>
 ## Models
 
 We've implemented the following deep learning models for traffic flow prediction:
